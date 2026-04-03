@@ -11,7 +11,7 @@ app.post("/products", (req, res) => {
     const productBody = req.body;
 
     const newProduct = {
-        id: nextId++,
+        id: Date.now().toString(36),
         ...productBody
     };
 
