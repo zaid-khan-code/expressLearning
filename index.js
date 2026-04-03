@@ -44,7 +44,7 @@ app.get("/products/:id", (req, res) => {
 });
 
 app.put("/products/:id", (req, res) => {
-    const productId = parseInt(req.params.id);
+    const productId = req.params.id;
     const updates = req.body;
 
     const productIndex = products.findIndex(p => p.id === productId);
@@ -65,7 +65,7 @@ app.put("/products/:id", (req, res) => {
 });
 
 app.delete("/products/:id", (req, res) => {
-    const productId = parseInt(req.params.id);
+    const productId = req.params.id;
     const productIndex = products.findIndex(p => p.id === productId);
 
     if (productIndex === -1) {
